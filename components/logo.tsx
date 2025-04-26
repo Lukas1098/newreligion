@@ -5,7 +5,7 @@ export function Logo() {
     <div className="relative w-24 h-24">
       <Image
         src="https://yhxagirrbrqtcqer.public.blob.vercel-storage.com/Santozfellas%20Logo%20White-JPSmIFz81s6OmZwltcRGyf2MEWTnGH.png"
-        alt="SDFM 2520"
+        alt="SF Logo"
         fill
         className="object-contain"
         priority
