@@ -12,7 +12,7 @@ export function Manifest() {
                     viewOptions={{ margin: '0px 0px 0px 0px' }}
                     transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
-                    <div className='max-w-96'>
+                    <div className='max-w-220'>
                         <h2 className='mb-4 text-3xl leading-tight text-center text-slate-900 dark:text-slate-100'>
                             Quiénes somos?                        
                         </h2>

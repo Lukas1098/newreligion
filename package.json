@@ -6,16 +6,23 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typegen": "pnpm dlx sanity@latest schema extract && pnpm dlx sanity@latest typegen generate"
   },
   "dependencies": {
+    "@sanity/icons": "^3.7.0",
+    "@sanity/image-url": "1",
+    "@sanity/vision": "3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.503.0",
     "motion": "^12.9.2",
     "next": "15.3.1",
+    "next-sanity": "9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sanity": "3",
+    "styled-components": "6",
     "tailwind-merge": "^3.2.0",
     "zustand": "^5.0.3"
   },
