@@ -1,6 +1,7 @@
 "use client"
 
 import { CryptoLoading, useLoadingStore } from "@/components/crypto";
+import { Footer } from "@/components/footer";
 import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
@@ -29,6 +30,7 @@ export default function ClientLayout({
         )}
       >
         {children}
+        <Footer />
       </div>
     </>
   );

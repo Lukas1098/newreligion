@@ -13,6 +13,10 @@ const nextConfig: NextConfig = {
         hostname: "64.media.tumblr.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      }
     ],
   },
 };

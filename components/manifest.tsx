@@ -1,52 +1,30 @@
-import { InView } from "@/components/ui/in-view";
 
 export function Manifest() {
     return (
-        <div className="min-h-[350px] w-full">
+        <div className="w-full py-8">
             <div className="flex items-center justify-center px-4 py-12">
-                <InView
-                    variants={{
-                        hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-                        visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-                    }}
-                    viewOptions={{ margin: '0px 0px 0px 0px' }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                >
-                    <div className='max-w-220'>
-                        <h2 className='mb-4 text-3xl leading-tight text-center text-slate-900 dark:text-slate-100'>
-                            Quiénes somos?                        
-                        </h2>
-                        <p className=''>
-                            {/* <strong className='font-medium'>
-                                Craft beautiful animated components with Motion-Primitives.
-                            </strong>{' '} */}
-                            Designed for developers and designers. The library leverages the
-                            power of Motion, with intuitive APIs that simplifies creating
-                            complex animations for any project. Start building more dynamic
-                            interfaces today.
-                        </p>
-                        <br />
-                        <p className=''>
-                            {/* <strong className='font-medium'>
-                                Craft beautiful animated components with Motion-Primitives.
-                            </strong>{' '} */}
-                            Designed for developers and designers. The library leverages the
-                            power of Motion, with intuitive APIs that simplifies creating
-                            complex animations for any project. Start building more dynamic
-                            interfaces today.
-                        </p>
-                        <br />
-                        <p className=''>
-                            {/* <strong className='font-medium'>
-                                Craft beautiful animated components with Motion-Primitives.
-                            </strong>{' '} */}
-                            Designed for developers and designers. The library leverages the
-                            power of Motion, with intuitive APIs that simplifies creating
-                            complex animations for any project. Start building more dynamic
-                            interfaces today.
-                        </p>
-                    </div>
-                </InView>
+                <div className='max-w-220'>
+                    <p className=''>
+                    NACIDOS EN LAS CALLES, CREADOS PARA REVOLUCIONAR. 
+                    Nuestras prendas están diseñadas para los que desafían lo establecido. 
+                    Cada pieza es una declaración de intenciones que fusiona la cultura urbana 
+                    con la actitud underground que nos define.
+                    </p>
+                    <br />
+                    <p className=''>
+                    NO SOMOS MODA, SOMOS CULTURA. 
+                    El streetwear no es solo lo que vistes, es cómo vives. 
+                    Nuestra marca se nutre de la energía de la calle, transformando la rebeldía en prendas que hablan por sí solas. 
+                    Únete al movimiento que está redefiniendo las reglas.
+                    </p>
+                    <br />
+                    <p className=''>
+                    EXCLUSIVIDAD EN CADA DETALLE. 
+                    Limitamos nuestras colecciones porque lo extraordinario nunca es masivo. 
+                    Diseñamos para una comunidad que entiende que llevar nuestra marca es pertenecer a algo más grande. 
+                    No seguimos tendencias, las creamos.
+                    </p>
+                </div>
             </div>
         </div>
     );

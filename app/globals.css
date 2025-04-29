@@ -120,3 +120,52 @@
     @apply bg-background text-foreground;
   }
 }
+
+.theme-ignore {
+  /* Esta clase ignorará los estilos específicos del tema */
+  filter: none !important;
+  opacity: var(--original-opacity) !important;
+  invert: var(--original-invert) !important;
+}
+
+.hero-text {
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3) !important; /* Añadir sombreado para mejor legibilidad */
+}
+
+/* Preserva la apariencia original de los videos cuando está en dark/light mode */
+.dark .theme-preserve-video {
+  filter: none !important;
+  opacity: 0.35 !important; /* o el valor original que prefieras */
+  invert: 0 !important;
+}
+
+.light .theme-preserve-video {
+  filter: none !important;
+  opacity: 100 !important;
+  invert: 1 !important;
+}
+
+.loading-text-dark {
+  color: white !important;
+}
+
+.loading-text-light {
+  color: black !important;
+}
+
+.loading-bg-dark {
+  background-color: #121212 !important;
+}
+
+.loading-bg-light {
+  background-color: white !important;
+}
+
+.progress-bar-dark {
+  background-color: white !important;
+}
+
+.progress-bar-light {
+  background-color: black !important;
+}
