@@ -34,7 +34,7 @@ export function CryptoLoading() {
   
   // Logo URLs según el tema
   const logoUrl = isDarkTheme 
-    ? "https://yhxagirrbrqtcqer.public.blob.vercel-storage.com/Santozfellas%20Logo%20White-JPSmIFz81s6OmZwltcRGyf2MEWTnGH.png" 
+    ? "/Logo-blanco.png" 
     : "/Logo-negro.png"
 
   useEffect(() => {

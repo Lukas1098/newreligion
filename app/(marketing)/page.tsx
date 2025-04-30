@@ -4,7 +4,6 @@ import ProductsView from "@/components/products-cards";
 import { fetchAllProducts } from "@/sanity/lib/products/fetchAllProducts";
 
 
-
 export default async function Home() {
   const products = await fetchAllProducts();
   return (

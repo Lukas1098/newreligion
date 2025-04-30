@@ -5,13 +5,21 @@ import Image from "next/image";
 
 const backgrounds = [
     {
-        type: "video",
-        src: "https://yhxagirrbrqtcqer.public.blob.vercel-storage.com/12279551_3840_2160_60fps-DHnKDNhSKEAnrUNc9jd1QKzR9ZM2sB.mp4"
+        type: "image",
+        src: "/hero1_gif.gif"
     },
     {
         type: "image",
-        src: "https://yhxagirrbrqtcqer.public.blob.vercel-storage.com/tumblr_db8472cfbb89a155148003b053d5f3de_158142e8_400-bZnFkLIw4KtPpDM3cpYTJaHKNymPTw.gif" // Reemplaza con la URL de tu GIF
-    }
+        src: "/hero3_gif.gif"
+    },
+    {
+        type: "image",
+        src: "/hero4_gif.gif"
+    },
+    {
+        type: "image",
+        src: "/hero5_gif.gif"
+    },
 ];
 
 export function Hero() {
@@ -20,7 +28,7 @@ export function Hero() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentBgIndex(prev => (prev + 1) % backgrounds.length);
-        }, 10000);
+        }, 3000);
 
         return () => clearInterval(interval);
     }, []);
@@ -35,29 +43,17 @@ export function Hero() {
                             className={`absolute inset-0 -z-10 transition-opacity duration-1000 ${index === currentBgIndex ? "opacity-100" : "opacity-0"
                                 }`}
                         >
-                            {bg.type === "video" ? (
-                                <video
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    className="size-full -scale-x-100 object-cover theme-preserve-video opacity-50 invert dark:opacity-35 dark:invert-0 dark:lg:opacity-75"
-                                    src={bg.src}
-                                />
-                            ) : (
-                                <Image
-                                    src={bg.src}
-                                    alt="Background"
-                                    fill
-                                    className="object-cover theme-preserve-video opacity-50 dark:opacity-35"
-                                />
-                            )}
+                            <Image
+                                src={bg.src}
+                                alt="Background"
+                                fill
+                                className="object-cover theme-preserve-video opacity-50 dark:opacity-35"
+                            />
                         </div>
                     ))}
-
                     <div className="absolute inset-0 bg-opacity-50 flex flex-col items-center justify-center">
                         <Image
-                            src="https://yhxagirrbrqtcqer.public.blob.vercel-storage.com/Santoz-Fella%27s-Png-ExCCnzHjLAeJM8HTE8oESBbOuERJTo.png"
+                            src="/Hero-logo.png"
                             alt="SDFM 2520"
                             width={350}
                             height={350}
