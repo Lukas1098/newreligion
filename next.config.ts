@@ -16,7 +16,12 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
-      }
+      },
+      {
+        protocol: "https",
+        hostname: "d26lpennugtm8s.cloudfront.net",
+        pathname: "/**",
+      },
     ],
   },
   eslint: {

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { MainNav } from "./navigation/main-nav";
 
 const backgrounds = [
     {
@@ -35,6 +36,7 @@ export function Hero() {
 
     return (
         <main className="overflow-x-hidden pb-12 md:pb-24">
+                <MainNav />
             <section id='hero' className="min-h-screen relative">
                 <div className="relative w-full h-screen overflow-hidden">
                     {backgrounds.map((bg, index) => (

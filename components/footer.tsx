@@ -1,76 +1,100 @@
 "use client"
-import { AnimatedBackground } from '@/components/ui/animated-background'
-import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
 
-const THEMES_OPTIONS = [
-    {
-        label: 'Light',
-        id: 'light',
-        icon: <SunIcon className="h-4 w-4" />,
-    },
-    {
-        label: 'Dark',
-        id: 'dark',
-        icon: <MoonIcon className="h-4 w-4" />,
-    },
-    {
-        label: 'System',
-        id: 'system',
-        icon: <MonitorIcon className="h-4 w-4" />,
-    },
-]
+import Link from "next/link"
+import { Instagram } from "lucide-react"
+import { useMobile } from "@/hooks/use-mobile"
+import { Logo } from "./logo"
+import Image from "next/image"
 
-function ThemeSwitch() {
-    const [mounted, setMounted] = useState(false)
-    const { theme, setTheme } = useTheme()
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    if (!mounted) {
-        return null
-    }
+export default function Footer() {
+    const isMobile = useMobile()
 
     return (
-        <AnimatedBackground
-            className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
-            defaultValue={theme}
-            transition={{
-                type: 'spring',
-                bounce: 0,
-                duration: 0.2,
-            }}
-            enableHover={false}
-            onValueChange={(id) => {
-                setTheme(id as string)
-            }}
-        >
-            {THEMES_OPTIONS.map((theme) => {
-                return (
-                    <button
-                        key={theme.id}
-                        className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
-                        type="button"
-                        aria-label={`Switch to ${theme.label} theme`}
-                        data-id={theme.id}
-                    >
-                        {theme.icon}
-                    </button>
-                )
-            })}
-        </AnimatedBackground>
-    )
-}
+        <footer className="w-full py-8 border-t border-gray-100">
+            <div className="container mx-auto px-4">
+                {isMobile ? (
+                    // Mobile Layout
+                    <div className="flex flex-col items-center text-center">
+                        <div className="mb-6 flex flex-col items-center space-y-2">
+                            <div className="text-xs font-fold uppercase mb-2 hover:underline">
+                                <strong>Tienda</strong>
+                            </div>
+                            <Link href="#hero" className="text-xs font-light uppercase mb-2 hover:underline">
+                                HOME
+                            </Link>
+                            <Link href="#about" className="text-xs font-light uppercase mb-2 hover:underline">
+                                ABOUT
+                            </Link>
+                            <Link href="#productos" className="text-xs font-light uppercase mb-2 hover:underline">
+                                Productos
+                            </Link>
+                        </div>
 
-export function Footer() {
-    return (
-        <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
-            <div className="flex items-center justify-between">
-                <div className="text-xs text-zinc-400">
-                    <ThemeSwitch />
+                        <div className="mb-6 flex flex-col items-center space-y-4">
+                            <Link href="/" aria-label="Go to homepage">
+                                <Logo />
+                            </Link>
+                            <Link href="https://instagram.com" aria-label="Instagram" className="text-black hover:text-gray-600">
+                                <Instagram size={10} />
+                            </Link>
+                        </div>
+                    </div>
+                ) : (
+                    // Desktop Layout with vertical dividers
+                    <div className="flex justify-center items-start mb-12 relative">
+                        {/* First vertical divider */}
+                        <div className="hidden md:block absolute h-40 w-px bg-gray-200 left-1/3 transform -translate-x-8"></div>
+
+                        {/* Second vertical divider */}
+                        <div className="hidden md:block absolute h-40 w-px bg-gray-200 right-1/3 transform translate-x-8"></div>
+
+
+                        <div className="flex flex-col items-end justify-center pr-16 w-1/3 mt-5">
+                            <div className="text-xs font-fold uppercase mb-2 hover:underline">
+                                <strong>Tienda</strong>
+                            </div>
+                            <Link href="#hero" className="text-xs font-light uppercase mb-2 hover:underline">
+                                HOME
+                            </Link>
+                            <Link href="#about" className="text-xs font-light uppercase mb-2 hover:underline">
+                                ABOUT
+                            </Link>
+                            <Link href="#productos" className="text-xs font-light uppercase mb-2 hover:underline">
+                                Productos
+                            </Link>
+                        </div>
+
+
+                        <div className="flex flex-col items-center justify-start space-y-4 w-1/3">
+                            <Link href="/" aria-label="Go to homepage">
+                                <Logo />
+                            </Link>
+                            <Link href="https://instagram.com" aria-label="Instagram" className="text-black hover:text-gray-600">
+                                <Instagram size={15} />
+                            </Link>
+                        </div>
+
+
+                        <div className="w-1/3"></div>
+                    </div>
+                )}
+
+                <div className="flex justify-center space-x-2 mb-8">
+                    <Image
+                        src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/flags/ar.png"
+                        width={20}
+                        height={15}
+                        alt="Spanish flag"
+                        className="h-4 w-auto"
+                    />
+                </div>
+
+                <div className="text-center text-xs mb-4">
+                    Copyright Santoz Fellas - 2025. All rights reserved.
+                    <span className="mx-1">Defensa de las y los consumidores.</span>
+                    <Link href="/reclamos" className="underline hover:no-underline">
+                        Para reclamos ingrese aquí
+                    </Link>
                 </div>
             </div>
         </footer>
