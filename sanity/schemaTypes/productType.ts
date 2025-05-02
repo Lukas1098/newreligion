@@ -48,6 +48,25 @@ export const productType = defineType({
             validation: (Rule) => Rule.required().min(0),
         }),
         defineField({
+            name: "sizes",
+            title: "Available Sizes",
+            type: "array",
+            of: [
+                {
+                    type: 'string',
+                    options: {
+                        list: [
+                            { title: 'Small', value: 'S' },
+                            { title: 'Medium', value: 'M' },
+                            { title: 'Large', value: 'L' },
+                            { title: 'Extra Large', value: 'XL' }
+                        ]
+                    }
+                }
+            ],
+            validation: Rule => Rule.unique()
+        }),
+        defineField({
             name: "categories",
             title: "Categories",
             type: "array",

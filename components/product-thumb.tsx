@@ -28,10 +28,10 @@ export default function ProductThumb({ product }: { product: Product }) {
       </div>
 
       <div className="pt-3 pb-1 flex flex-col">
-        <h2 className="product-card__title-link leading-[14px] desktop:leading-[16.5px] uppercase default-focus font-sans font-medium" style={{ fontStyle: 'HelveticaNeueLTPro, sans-serif' }}>
+        <h2 className="uppercase font-sans text-xs font-stretch-75% tracking-wide">
           {product.name || "Product Name"}
         </h2>
-        <p className="text-sm">${product.price?.toFixed(0)}</p>
+        <p className="font-normal text-sm">${product.price?.toFixed(0)}</p>
       </div>
     </Link>
   )

@@ -770,6 +770,34 @@
         },
         "optional": true
       },
+      "sizes": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "array",
+          "of": {
+            "type": "union",
+            "of": [
+              {
+                "type": "string",
+                "value": "S"
+              },
+              {
+                "type": "string",
+                "value": "M"
+              },
+              {
+                "type": "string",
+                "value": "L"
+              },
+              {
+                "type": "string",
+                "value": "XL"
+              }
+            ]
+          }
+        },
+        "optional": true
+      },
       "categories": {
         "type": "objectAttribute",
         "value": {

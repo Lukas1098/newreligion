@@ -132,6 +132,7 @@ export type Product = {
     _type: "image";
   };
   price?: number;
+  sizes?: Array<"S" | "M" | "L" | "XL">;
   categories?: Array<{
     _ref: string;
     _type: "reference";
@@ -232,6 +233,7 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
     _type: "image";
   };
   price?: number;
+  sizes?: Array<"L" | "M" | "S" | "XL">;
   categories?: Array<{
     _ref: string;
     _type: "reference";
@@ -267,6 +269,7 @@ export type PRODUCT_BY_ID_QUERYResult = {
     _type: "image";
   };
   price?: number;
+  sizes?: Array<"L" | "M" | "S" | "XL">;
   categories?: Array<{
     _ref: string;
     _type: "reference";
