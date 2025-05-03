@@ -4,6 +4,7 @@ import "../globals.css";
 import ClientLayout from "@/app/providers/client";
 import { SanityLive } from "@/sanity/lib/live";
 import { ThemeProvider } from "@/components/ui/theme-provider"
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,10 +35,11 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="light"
           enableSystem
-          //disableTransitionOnChange
+        //disableTransitionOnChange
         >
           <ClientLayout>
             {children}
+            <Analytics />
             <SanityLive />
           </ClientLayout>
         </ThemeProvider>
