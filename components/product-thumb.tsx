@@ -9,7 +9,7 @@ export default function ProductThumb({ product }: { product: Product }) {
 
   return (
     <Link href={`/products/${product.slug?.current}`} className="group flex flex-col transition-all duration-200">
-      <div className={`relative aspect-square w-full overflow-hidden bg-[#f0f0f0] ${isOutOfStock ? "opacity-30" : ""}`}>
+      <div className={`relative aspect-[3/4] w-full overflow-hidden bg-[#f0f0f0] ${isOutOfStock ? "opacity-30" : ""}`}>
         {mainImage && (
           <Image
             className="object-contain transition-transform duration-300 p-1
@@ -34,7 +34,7 @@ export default function ProductThumb({ product }: { product: Product }) {
         </h2>
 
         <div className="flex items-center justify-between mt-1 w-full">
-          <p className="font-normal text-sm">${product.price?.toLocaleString("es-AR")}</p>
+          <p className="font-sans text-xs">${product.price?.toLocaleString("es-AR")}</p>
 
           {product.sizes && product.sizes.length > 0 && (
             <div className="text-xs">
@@ -42,7 +42,7 @@ export default function ProductThumb({ product }: { product: Product }) {
                 {product.sizes.map((size: string) => (
                   <span
                     key={size}
-                    className="text-xs font-sans"
+                    className="text-xs font-sans font-medium"
                   >
                     {size}
                   </span>

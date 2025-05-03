@@ -6,24 +6,24 @@ export function Manifest() {
                 <div className="flex items-center justify-center px-4 py-12">
                     <div className='max-w-220'>
                         <p className="text-xs font-sans font-medium uppercase">
-                            NACIDOS EN LAS CALLES, CREADOS PARA REVOLUCIONAR.
-                            Nuestras prendas están diseñadas para los que desafían lo establecido.
-                            Cada pieza es una declaración de intenciones que fusiona la cultura urbana
-                            con la actitud underground que nos define.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                         <br />
                         <p className="text-xs font-sans font-medium uppercase">
-                            NO SOMOS MODA, SOMOS CULTURA.
-                            El streetwear no es solo lo que vistes, es cómo vives.
-                            Nuestra marca se nutre de la energía de la calle, transformando la rebeldía en prendas que hablan por sí solas.
-                            Únete al movimiento que está redefiniendo las reglas.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                         <br />
                         <p className="text-xs font-sans font-medium uppercase">
-                            EXCLUSIVIDAD EN CADA DETALLE.
-                            Limitamos nuestras colecciones porque lo extraordinario nunca es masivo.
-                            Diseñamos para una comunidad que entiende que llevar nuestra marca es pertenecer a algo más grande.
-                            No seguimos tendencias, las creamos.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                     </div>
                 </div>

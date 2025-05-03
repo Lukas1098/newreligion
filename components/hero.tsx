@@ -67,15 +67,9 @@ export function Hero() {
                             className="object-contain mb-4"
                         />
                         <p className="mx-6 sm:mx-8 md:mx-auto mt-4 max-w-lg text-center text-base font-normal hero-text px-4 sm:px-0">
-                            No nos conformamos con tu mirada fugaz.
-                            Esta colección desgarra las normas de lo aceptable.
-                            Vístete para ofender el buen gusto.
-                            O viste como todos los demás.
-                            Tú decides.
-                            Nacidos en las sombras de la ciudad.
-                            Creando piezas que definen la contracultura.
-                            Donde la moda encuentra su lado oscuro.
-                            EST 2025
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
                         </p>
                     </div>
                 </div>
