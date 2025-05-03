@@ -20,6 +20,8 @@ export default async function ProductPage({
         return notFound();
     }
 
+    const hasImages = product.images && product.images.length > 0;
+
     const isOutOfStock = product.stock != null && product.stock <= 0;
 
     return (
@@ -44,21 +46,46 @@ export default async function ProductPage({
             <div className="flex flex-col md:flex-row max-w-6xl mx-auto">
 
                 <div className="md:w-1/2 pr-0">
-                    <div className={`relative aspect-square w-full overflow-hidden bg-[#f0f0f0] ${isOutOfStock ? "opacity-50" : ""}`}>
-                        {product.image && (
-                            <Image
-                                src={imageUrl(product.image).url()}
-                                alt={product.name ?? "Product Image"}
-                                fill
-                                className="object-contain transition-transform duration-300 p-6"
-                            />
-                        )}
-                        {isOutOfStock && (
-                            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-                                <span className="text-white text-lg">Sin Stock</span>
+                    {hasImages ? (
+                        <div className="space-y-4">
+                            {/* Mostrar la imagen principal más grande */}
+                            <div className={`relative aspect-square w-full overflow-hidden bg-[#f0f0f0] ${isOutOfStock ? "opacity-50" : ""}`}>
+                                <Image
+                                    src={hasImages ? imageUrl(product.images![0]).url() : "/placeholder.svg"}
+                                    alt={product.name ?? "Product Image"}
+                                    fill
+                                    className="object-contain transition-transform duration-300 p-6"
+                                />
+                                {isOutOfStock && (
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+                                        <span className="text-white text-lg">Sin Stock</span>
+                                    </div>
+                                )}
                             </div>
-                        )}
-                    </div>
+
+                            {/* Para las miniaturas adicionales */}
+                            {hasImages && product.images!.length > 1 && (
+                                <div className="flex overflow-x-auto gap-2 mt-2">
+                                    {product.images!.map((image, index) => (
+                                        <div key={index} className="relative w-20 h-20 flex-shrink-0 cursor-pointer">
+                                            <Image
+                                                src={imageUrl(image).url()}
+                                                alt={`${product.name} - image ${index + 1}`}
+                                                fill
+                                                className="object-contain p-1"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <div className="relative aspect-square w-full overflow-hidden bg-[#f0f0f0]">
+                            <div className="flex items-center justify-center h-full">
+                                <span className="text-gray-400">No image available</span>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
 

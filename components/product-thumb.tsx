@@ -5,15 +5,16 @@ import Link from "next/link"
 
 export default function ProductThumb({ product }: { product: Product }) {
   const isOutOfStock = product?.stock === 0
+  const mainImage = product.images && product.images.length > 0 ? product.images[0] : null
 
   return (
     <Link href={`/products/${product.slug?.current}`} className="group flex flex-col transition-all duration-200">
       <div className={`relative aspect-square w-full overflow-hidden bg-[#f0f0f0] ${isOutOfStock ? "opacity-30" : ""}`}>
-        {product.image && (
+        {mainImage && (
           <Image
             className="object-contain transition-transform duration-300 p-1
                         group-hover:scale-105"
-            src={imageUrl(product.image).url() || "/placeholder.svg"}
+            src={imageUrl(mainImage).url() || "/placeholder.svg"}
             alt={product.name || "Product Image"}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
