@@ -2,7 +2,6 @@
 
 import { CryptoLoading, useLoadingStore } from "@/components/crypto";
 import  Footer  from "@/components/footer";
-// import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
 export default function ClientLayout({
@@ -22,7 +21,6 @@ export default function ClientLayout({
           isLoading ? "opacity-0" : "opacity-100"
         )}
       >
-        {/* <Logo /> */}
       </div>
       <div
         className={cn(

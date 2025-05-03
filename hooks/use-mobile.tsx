@@ -4,8 +4,11 @@ import { useState, useEffect } from "react"
 
 export function useMobile() {
   const [isMobile, setIsMobile] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
+    setIsMounted(true)
+    
     // Function to check if the screen width is mobile
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
@@ -21,5 +24,7 @@ export function useMobile() {
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
 
-  return isMobile
+  // Durante el renderizado del servidor y la primera renderización del cliente,
+  // devolvemos false para que coincidan
+  return isMounted ? isMobile : false
 }

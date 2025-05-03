@@ -1,3 +1,4 @@
+import { FAQuestions } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { Manifest } from "@/components/manifest";
 import ProductsView from "@/components/products-cards";
@@ -11,6 +12,7 @@ export default async function Home() {
       <Hero />
       <Manifest />
       <ProductsView products={products} />
+      <FAQuestions />
     </>
   );
 }

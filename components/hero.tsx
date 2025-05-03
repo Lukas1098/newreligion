@@ -25,8 +25,11 @@ const backgrounds = [
 
 export function Hero() {
     const [currentBgIndex, setCurrentBgIndex] = useState(0);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
+        setIsMounted(true);
+
         const interval = setInterval(() => {
             setCurrentBgIndex(prev => (prev + 1) % backgrounds.length);
         }, 3000);
@@ -36,13 +39,14 @@ export function Hero() {
 
     return (
         <main className="overflow-x-hidden pb-12 md:pb-24">
-                <MainNav />
+            <MainNav />
             <section id='hero' className="min-h-screen relative">
                 <div className="relative w-full h-screen overflow-hidden">
                     {backgrounds.map((bg, index) => (
                         <div
                             key={bg.src}
-                            className={`absolute inset-0 -z-10 transition-opacity duration-1000 ${index === currentBgIndex ? "opacity-100" : "opacity-0"
+                            className={`absolute inset-0 -z-10 transition-opacity duration-1000 ${!isMounted ? (index === 0 ? "opacity-100" : "opacity-0") :
+                                    (index === currentBgIndex ? "opacity-100" : "opacity-0")
                                 }`}
                         >
                             <Image
@@ -50,6 +54,7 @@ export function Hero() {
                                 alt="Background"
                                 fill
                                 className="object-cover theme-preserve-video opacity-50 dark:opacity-35"
+                                priority={index === 0}
                             />
                         </div>
                     ))}

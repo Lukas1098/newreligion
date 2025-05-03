@@ -119,7 +119,7 @@ export type Product = {
   name?: string;
   slug?: Slug;
   description?: BlockContent;
-  image?: {
+  images?: Array<{
     asset?: {
       _ref: string;
       _type: "reference";
@@ -130,7 +130,8 @@ export type Product = {
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     _type: "image";
-  };
+    _key: string;
+  }>;
   price?: number;
   sizes?: Array<"S" | "M" | "L" | "XL">;
   categories?: Array<{
@@ -220,7 +221,7 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
   name?: string;
   slug?: Slug;
   description?: BlockContent;
-  image?: {
+  images?: Array<{
     asset?: {
       _ref: string;
       _type: "reference";
@@ -231,7 +232,8 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     _type: "image";
-  };
+    _key: string;
+  }>;
   price?: number;
   sizes?: Array<"L" | "M" | "S" | "XL">;
   categories?: Array<{
@@ -256,7 +258,7 @@ export type PRODUCT_BY_ID_QUERYResult = {
   name?: string;
   slug?: Slug;
   description?: BlockContent;
-  image?: {
+  images?: Array<{
     asset?: {
       _ref: string;
       _type: "reference";
@@ -267,7 +269,8 @@ export type PRODUCT_BY_ID_QUERYResult = {
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
     _type: "image";
-  };
+    _key: string;
+  }>;
   price?: number;
   sizes?: Array<"L" | "M" | "S" | "XL">;
   categories?: Array<{

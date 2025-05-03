@@ -9,6 +9,7 @@ const navItems = [
     { name: "Home", href: "/"},
     { name: "About", href: "#about" },
     { name: "Productos", href: "#productos" },
+    { name: "Preguntas", href: "#faq" },
 ]
 
 export function MainNav() {
@@ -43,7 +44,7 @@ export function MainNav() {
                                     <li key={index}>
                                         <Link
                                             href={item.href}
-                                            className="block duration-150 text-white">
+                                            className="block duration-150 text-white text-xs font-medium uppercase mb-2 [text-shadow:_0_1px_2px_rgba(0,0,0,0.5)]">
                                             <span>{item.name}</span>
                                         </Link>
                                     </li>

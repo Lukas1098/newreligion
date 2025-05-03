@@ -23,7 +23,7 @@ export default async function ProductPage({
     const isOutOfStock = product.stock != null && product.stock <= 0;
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8 mb-30">
             <div className="md:w-1/2 pr-0 relative">
                 <Link href={"/"} className="flex items-center gap-2">
                     <Image
@@ -32,7 +32,7 @@ export default async function ProductPage({
                         width={100}
                         height={100}
                         className="w-5 h-auto"
-                    /> 
+                    />
                     <div >
                         <h1 className="mx-auto text-sm font-light hover:underline">
                             Volver
@@ -70,20 +70,23 @@ export default async function ProductPage({
 
 
                     <div className="mt-4">
-                        <p className="font-normal text-xs">${product.price?.toFixed(2)}</p>
+                        <p className="font-normal text-xs">${product.price?.toLocaleString("es-AR")}</p>
                     </div>
 
                     <div className="border-t border-gray-100 my-4"></div>
 
 
                     {product.sizes && product.sizes.length > 0 && (
-                        <div className="mt-15">
-                            <div className="border-t border-gray-100 my-4"></div>
+                        <div className="mt-13 mb-10 mx-auto text-xs">
+                            <span className="text-xs font-fold block mb-1">
+                                <strong>Talles disponibles</strong>
+                            </span>
+                            <div className="border-t border-gray-100 mt-1 mb-3"></div>
                             <div className="flex gap-2">
                                 {product.sizes.map((size: string) => (
                                     <button
                                         key={size}
-                                        className="text-xs font-sans font-medium"
+                                        className="text-xs font-sans font-medium hover:underline"
                                     >
                                         {size}
                                     </button>
@@ -94,10 +97,14 @@ export default async function ProductPage({
 
                     <div className="border-t border-gray-100 my-4"></div>
 
-                    <div className="mt-20 mb-6 mx-auto text-xs font-light hover:underline">
-                    <div className="border-t border-gray-100 my-4"></div>
-                        <p>Hacemos envios a toda Argentina.</p>
+                    <div className="mt-13 mb-10 mx-auto text-xs">
+                        <span className="text-xs font-fold block mb-1">
+                            <strong>Envios</strong>
+                        </span>
+                        <div className="border-t border-gray-100 mt-1 mb-3"></div>
+                        <p className="hover:underline">Hacemos envios a toda Argentina por Andreani.</p>
                     </div>
+
                     <div className="border-t border-gray-100 my-4"></div>
                     {Array.isArray(product.description) && (
                         <div className="prose max-w-none mt-20 mb-6 mx-auto text-xs font-light hover:underline">
@@ -107,7 +114,7 @@ export default async function ProductPage({
 
                     <div className="border-t border-gray-100 my-4"></div>
 
-                    <BuyButton isOutOfStock={isOutOfStock} productName={product.name}  />
+                    <BuyButton isOutOfStock={isOutOfStock} productName={product.name} />
                 </div>
             </div>
         </div>

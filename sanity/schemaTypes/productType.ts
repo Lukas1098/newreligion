@@ -34,12 +34,15 @@ export const productType = defineType({
             type: "blockContent",
         }),
         defineField({
-            name: "image",
+            name: "images",
             title: "Image",
-            type: "image",
-            options: {
-                hotspot: true,
-            },
+            type: "array",
+            of: [{
+                type: 'image',
+                options: {
+                    hotspot: true,
+                },
+            }]
         }),
         defineField({
             name: "price",
@@ -85,8 +88,8 @@ export const productType = defineType({
             media: "image",
             price: "price",
         },
-        prepare(select){
-            return{
+        prepare(select) {
+            return {
                 title: select.title,
                 subtittle: `$${select.price}`,
                 media: select.media,

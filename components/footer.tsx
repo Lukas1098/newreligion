@@ -19,14 +19,17 @@ export default function Footer() {
                             <div className="text-xs font-fold uppercase mb-2 hover:underline">
                                 <strong>Tienda</strong>
                             </div>
-                            <Link href="#hero" className="text-xs font-light uppercase mb-2 hover:underline">
+                            <Link href="/#hero" className="text-xs font-light uppercase mb-2 hover:underline">
                                 HOME
                             </Link>
-                            <Link href="#about" className="text-xs font-light uppercase mb-2 hover:underline">
+                            <Link href="/#about" className="text-xs font-light uppercase mb-2 hover:underline">
                                 ABOUT
                             </Link>
-                            <Link href="#productos" className="text-xs font-light uppercase mb-2 hover:underline">
+                            <Link href="/#productos" className="text-xs font-light uppercase mb-2 hover:underline">
                                 Productos
+                            </Link>
+                            <Link href="/#faq" className="text-xs font-light uppercase mb-2 hover:underline">
+                                Preguntas
                             </Link>
                         </div>
 
@@ -53,14 +56,17 @@ export default function Footer() {
                             <div className="text-xs font-fold uppercase mb-2 hover:underline">
                                 <strong>Tienda</strong>
                             </div>
-                            <Link href="#hero" className="text-xs font-light uppercase mb-2 hover:underline">
+                            <Link href="/#hero" className="text-xs font-light uppercase mb-2 hover:underline">
                                 HOME
                             </Link>
-                            <Link href="#about" className="text-xs font-light uppercase mb-2 hover:underline">
+                            <Link href="/#about" className="text-xs font-light uppercase mb-2 hover:underline">
                                 ABOUT
                             </Link>
-                            <Link href="#productos" className="text-xs font-light uppercase mb-2 hover:underline">
+                            <Link href="/#productos" className="text-xs font-light uppercase mb-2 hover:underline">
                                 Productos
+                            </Link>
+                            <Link href="/#faq" className="text-xs font-light uppercase mb-2 hover:underline">
+                                Preguntas
                             </Link>
                         </div>
 
@@ -69,12 +75,10 @@ export default function Footer() {
                             <Link href="/" aria-label="Go to homepage">
                                 <Logo />
                             </Link>
-                            <Link href="https://instagram.com" aria-label="Instagram" className="text-black hover:text-gray-600">
+                            <Link href="https://www.instagram.com/rolooaquino" aria-label="Instagram" className="text-black hover:text-gray-600">
                                 <Instagram size={15} />
                             </Link>
                         </div>
-
-
                         <div className="w-1/3"></div>
                     </div>
                 )}
@@ -91,8 +95,8 @@ export default function Footer() {
 
                 <div className="text-center text-xs mb-4">
                     Copyright Santoz Fellas - 2025. All rights reserved.
-                    <span className="mx-1">Defensa de las y los consumidores.</span>
-                    <Link href="/reclamos" className="underline hover:no-underline">
+                    <br />
+                    <Link href="https://www.instagram.com/rolooaquino" className="underline hover:no-underline">
                         Para reclamos ingrese aquí
                     </Link>
                 </div>

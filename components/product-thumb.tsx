@@ -22,7 +22,7 @@ export default function ProductThumb({ product }: { product: Product }) {
 
         {isOutOfStock && (
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-            <span className="text-white text-lg">Sin Stock</span>
+            <span className="text-white text-lg font-sans font-medium">Sin Stock</span>
           </div>
         )}
       </div>
@@ -31,7 +31,25 @@ export default function ProductThumb({ product }: { product: Product }) {
         <h2 className="uppercase font-sans text-xs font-stretch-75% tracking-wide">
           {product.name || "Product Name"}
         </h2>
-        <p className="font-normal text-sm">${product.price?.toFixed(0)}</p>
+
+        <div className="flex items-center justify-between mt-1 w-full">
+          <p className="font-normal text-sm">${product.price?.toLocaleString("es-AR")}</p>
+
+          {product.sizes && product.sizes.length > 0 && (
+            <div className="text-xs">
+              <div className="flex flex-wrap gap-1">
+                {product.sizes.map((size: string) => (
+                  <span
+                    key={size}
+                    className="text-xs font-sans font-medium"
+                  >
+                    {size}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </Link>
   )
