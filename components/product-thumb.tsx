@@ -30,7 +30,7 @@ export default function ProductThumb({ product }: { product: Product }) {
 
       <div className="pt-3 pb-1 flex flex-col">
         <h2 className="uppercase font-sans text-xs font-stretch-75% tracking-wide">
-          {product.name || "Product Name"}
+          <strong>{product.name || "Product Name"}</strong>
         </h2>
 
         <div className="flex items-center justify-between mt-1 w-full">
@@ -42,7 +42,7 @@ export default function ProductThumb({ product }: { product: Product }) {
                 {product.sizes.map((size: string) => (
                   <span
                     key={size}
-                    className="text-xs font-sans font-medium"
+                    className="text-xs font-sans"
                   >
                     {size}
                   </span>
