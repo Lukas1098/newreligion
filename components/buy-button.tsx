@@ -24,7 +24,7 @@ export default function BuyButton({ isOutOfStock = false, productName = "" }: Bu
     const encodedMessage = encodeURIComponent(message);
     
     // Redirige al usuario a WhatsApp con el mensaje preparado
-    router.push(`https://api.whatsapp.com/send?phone=5491124974432&text=${encodedMessage}`);
+    router.push(`https://api.whatsapp.com/send?phone=5491122904558&text=${encodedMessage}`);
   };
 
   return (
