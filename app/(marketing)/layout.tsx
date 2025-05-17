@@ -25,7 +25,12 @@ export const metadata: Metadata = {
     url: "https://santozfellas.com",
     siteName: "Santoz Fellas",
     images: [
-      { url: "/og-image.png" },
+      { url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Santoz Fellas",
+        type: "image/png",
+       },
     ],
     locale: "es",
     type: "website",
