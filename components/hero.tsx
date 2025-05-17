@@ -55,6 +55,7 @@ export function Hero() {
                                 fill
                                 className="object-cover theme-preserve-video opacity-50 dark:opacity-35"
                                 priority={index === 0}
+                                unoptimized={true}
                             />
                         </div>
                     ))}

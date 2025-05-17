@@ -14,11 +14,20 @@ const navItems = [
 
 export function MainNav() {
     const [menuState, setMenuState] = React.useState(false)
+    const [isScrolled, setIsScrolled] = React.useState(false)
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 10)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     return (
         <header>
             <nav data-state={menuState && 'active'}
-                className="fixed z-20 w-full px-2">
+                className={cn("fixed z-20 w-full px-2 transition-all duration-300", isScrolled ? "lg:bg-background/50 backdrop-blur-md" : "")}>
                 <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">
@@ -38,28 +47,31 @@ export function MainNav() {
                             </button>
                         </div>
 
+                        {/* Desktop Menu */}
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
                             <ul className="flex gap-8 text-sm">
                                 {navItems.map((item, index) => (
                                     <li key={index}>
                                         <Link
                                             href={item.href}
-                                            className="block duration-150 text-white text-xs font-medium uppercase mb-2 [text-shadow:_0_1px_2px_rgba(0,0,0,0.5)]">
+                                            className="block duration-150 text-white text-lg font-sans uppercase mb-2 [text-shadow:_0_1px_2px_rgba(0,0,0,0.5)]">
                                             <span>{item.name}</span>
                                         </Link>
                                     </li>
                                 ))}
                             </ul>
                         </div>
-                        <div className="bg-background/50 backdrop-blur-md in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border border-white/10 p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+
+                        {/* Mobile Menu */}
+                        <div className="bg-background/50 backdrop-blur-md in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8  border border-white/10 p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
                             <div className="lg:hidden">
                                 <ul className="space-y-6 text-base">
                                     {navItems.map((item, index) => (
                                         <li key={index}>
                                             <Link
                                                 href={item.href}
-                                                className="text-muted-foreground block duration-150">
-                                                <span>{item.name}</span>
+                                                className="text-muted-foreground block duration-150 ">
+                                                <span className="text-lg font-fold block mb-1">{item.name}</span>
                                             </Link>
                                         </li>
                                     ))}

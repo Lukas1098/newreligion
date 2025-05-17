@@ -166,7 +166,7 @@ export default async function ProductPage({
 
                     <div className="border-t border-gray-100 my-4"></div>
                     {Array.isArray(product.description) && (
-                        <div className="prose max-w-none mt-20 mb-6 mx-auto text-xs font-light hover:underline">
+                        <div className="prose max-w-none mt-20 mb-6 mx-auto text-xs font-light">
                             <PortableText value={product.description} />
                         </div>
                     )}
