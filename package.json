@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "set NODE_OPTIONS=-r newrelic && next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "set NODE_OPTIONS=-r newrelic && next start",
     "lint": "next lint",
     "typegen": "pnpm dlx sanity@latest schema extract && pnpm dlx sanity@latest typegen generate",
     "postbuild": "next-sitemap"
@@ -21,6 +21,7 @@
     "framer-motion": "^12.9.2",
     "lucide-react": "^0.503.0",
     "motion": "^12.9.2",
+    "newrelic": "^13.1.0",
     "next": "15.3.1",
     "next-sanity": "9",
     "next-sitemap": "^4.2.3",
@@ -36,6 +37,7 @@
     "@eslint/eslintrc": "^3",
     "@sanity/client": "^6.29.1",
     "@tailwindcss/postcss": "^4",
+    "@types/newrelic": "^9.14.8",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
