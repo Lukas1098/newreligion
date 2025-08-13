@@ -5,6 +5,7 @@ import ClientLayout from "@/app/providers/client";
 import { SanityLive } from "@/sanity/lib/live";
 import { ThemeProvider } from "@/components/ui/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
+import Script from 'next/script'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Script
+        async
+        src="newrelic.js"
+      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

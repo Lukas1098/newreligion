@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Disallow: /studio/
+Allow: /
+
+# Host
+Host: https://santozfellas.com
+
+# Sitemaps
+Sitemap: https://santozfellas.com/sitemap.xml
