@@ -26,12 +26,13 @@ export const metadata: Metadata = {
     url: "https://santozfellas.com",
     siteName: "Santoz Fellas",
     images: [
-      { url: "/og-image.png",
+      {
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Santoz Fellas",
         type: "image/png",
-       },
+      },
     ],
     locale: "es",
     type: "website",
@@ -46,8 +47,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Script
-        async
-        src="newrelic.js"
+        id="newrelic-browser"
+        strategy="beforeInteractive"
+        src="/newrelic.js"
       />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
