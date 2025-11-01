@@ -27,17 +27,10 @@ export default async function ProductPage({
     return (
         <div className="container mx-auto px-4 py-8 mb-30">
             <div className="md:w-1/2 pr-0 relative">
-                <Link href={"/"} className="flex items-center gap-2">
-                    <Image
-                        src="/back-to-menu.svg"
-                        alt="Logo"
-                        width={100}
-                        height={100}
-                        className="w-5 h-auto"
-                    />
+                <Link href={"/"} className="flex items-center gap-2 mt-20">
                     <div>
                         <h1 className="mx-auto text-sm font-light hover:underline">
-                            Volver
+                            Go back
                         </h1>
                     </div>
                 </Link>
@@ -45,13 +38,10 @@ export default async function ProductPage({
             <div className="mt-16 md:mt-24"></div>
             
             <div className="flex flex-col md:flex-row max-w-6xl mx-auto relative">
-                {/* Imágenes del producto - Carrusel vertical en desktop, horizontal en móvil */}
                 <div className="md:w-1/2 pr-0">
-                    {/* Carrusel horizontal para móvil */}
                     <div className="md:hidden">
                         {hasImages ? (
                             <div className="relative">
-                                {/* Aquí iría un carrusel horizontal para móvil */}
                                 <div className="overflow-x-auto flex snap-x snap-mandatory">
                                     {productImages.map((image, index) => (
                                         <div 
@@ -67,13 +57,12 @@ export default async function ProductPage({
                                             />
                                             {isOutOfStock && index === 0 && (
                                                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-                                                    <span className="text-white text-lg">Sin Stock</span>
+                                                    <span className="text-white text-lg">Out of stock</span>
                                                 </div>
                                             )}
                                         </div>
                                     ))}
                                 </div>
-                                {/* Indicadores de posición para móvil */}
                                 <div className="flex justify-center mt-4 gap-1">
                                     {productImages.map((_, index) => (
                                         <div key={index} className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
@@ -89,11 +78,9 @@ export default async function ProductPage({
                         )}
                     </div>
                     
-                    {/* Carrusel vertical para desktop */}
                     <div className="hidden md:block">
                         {hasImages ? (
                             <div className="space-y-8 sticky">
-                                {/* Mostrar todas las imágenes en columna para desktop */}
                                 {productImages.map((image, index) => (
                                     <div 
                                         key={index} 
@@ -107,7 +94,7 @@ export default async function ProductPage({
                                         />
                                         {isOutOfStock && index === 0 && (
                                             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-                                                <span className="text-white text-lg">Sin Stock</span>
+                                                <span className="text-white text-lg">Out of stock</span>
                                             </div>
                                         )}
                                     </div>
@@ -123,7 +110,6 @@ export default async function ProductPage({
                     </div>
                 </div>
 
-                {/* Detalles del producto - Sticky en desktop */}
                 <div className="md:w-1/2 md:pl-12 mt-8 md:mt-0 md:sticky md:top-24 md:self-start">
                     <h1 className="uppercase font-sans text-xs font-bold tracking-wide">
                         {product.name}
@@ -133,14 +119,12 @@ export default async function ProductPage({
                         <p className="font-normal text-xs">${product.price?.toLocaleString("es-AR")}</p>
                     </div>
 
-                    <div className="border-t border-gray-100 my-4"></div>
-
                     {product.sizes && product.sizes.length > 0 && (
                         <div className="mt-13 mb-10 mx-auto text-xs">
                             <span className="text-xs font-fold block mb-1">
-                                <strong>Talles disponibles</strong>
+                                <strong>Sizes</strong>
                             </span>
-                            <div className="border-t border-gray-100 mt-1 mb-3"></div>
+                            
                             <div className="flex gap-2">
                                 {product.sizes.map((size: string) => (
                                     <button
@@ -153,20 +137,9 @@ export default async function ProductPage({
                             </div>
                         </div>
                     )}
-
-                    <div className="border-t border-gray-100 my-4"></div>
-
-                    <div className="mt-13 mb-10 mx-auto text-xs">
-                        <span className="text-xs font-fold block mb-1">
-                            <strong>Envios</strong>
-                        </span>
-                        <div className="border-t border-gray-100 mt-1 mb-3"></div>
-                        <p className="hover:underline">Hacemos envios a toda Argentina por Andreani.</p>
-                    </div>
-
-                    <div className="border-t border-gray-100 my-4"></div>
+                  
                     {Array.isArray(product.description) && (
-                        <div className="prose max-w-none mt-20 mb-6 mx-auto text-xs font-light">
+                        <div className="prose max-w-none mt-15 mb-6 mx-auto text-xs font-light">
                             <PortableText value={product.description} />
                         </div>
                     )}

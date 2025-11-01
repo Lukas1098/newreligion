@@ -1,86 +1,60 @@
 'use client'
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react'
-import React from 'react'
-import { cn } from '@/lib/utils'
-import { Logo } from '../logo';
-
-const navItems = [
-    { name: "Home", href: "/"},
-    { name: "About", href: "#about" },
-    { name: "Productos", href: "#productos" },
-    { name: "Preguntas", href: "#faq" },
-]
+import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
+import { opacity, background } from '@/data/constants'
+import Navigation from './navigation'
 
 export function MainNav() {
-    const [menuState, setMenuState] = React.useState(false)
-    const [isScrolled, setIsScrolled] = React.useState(false)
-
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10)
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+    const [isActive, setIsActive] = useState(false)
 
     return (
-        <header>
-            <nav data-state={menuState && 'active'}
-                className={cn("fixed z-20 w-full px-2 transition-all duration-300", isScrolled ? "lg:bg-background/50 backdrop-blur-md" : "")}>
-                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12')}>
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center space-x-2">
-                                <Logo />   
-                            </Link>
+        <header className="fixed top-0 left-0 z-[100] w-full bg-white text-black box-border p-[10px] sm:p-[20px]">
+            <div className="flex justify-center uppercase text-[12px] sm:text-[15px] font-normal relative">
 
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                            </button>
-                        </div>
+                <Link href="/" className="flex justify-center text-[12px] relative font-bold">
+                    new religion
+                </Link>
 
-                        {/* Desktop Menu */}
-                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
-                                {navItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className="block duration-150 text-white text-lg font-sans uppercase mb-2 [text-shadow:_0_1px_2px_rgba(0,0,0,0.5)]">
-                                            <span>{item.name}</span>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                <div
+                    className="flex items-center justify-center gap-2 sm:gap-[8px] cursor-pointer absolute right-0"
+                    onClick={() => setIsActive(!isActive)}
+                >
 
-                        {/* Mobile Menu */}
-                        <div className="bg-background/50 backdrop-blur-md in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8  border border-white/10 p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-                            <div className="lg:hidden">
-                                <ul className="space-y-6 text-base">
-                                    {navItems.map((item, index) => (
-                                        <li key={index}>
-                                            <Link
-                                                href={item.href}
-                                                className="text-muted-foreground block duration-150 ">
-                                                <span className="text-lg font-fold block mb-1">{item.name}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
+                    <div
+                        className={`w-[22.5px] relative pointer-events-none`}
+                    />
+
+                    <div className="flex items-center relative">
+                        <motion.p
+                            variants={opacity}
+                            animate={!isActive ? 'open' : 'closed'}
+                            className="m-0"
+                        >
+                            Menu
+                        </motion.p>
+                        <motion.p
+                            variants={opacity}
+                            animate={isActive ? 'open' : 'closed'}
+                            className="absolute m-0"
+                        >
+                            Close
+                        </motion.p>
                     </div>
+
                 </div>
-            </nav>
+            </div>
+
+            <motion.div
+                variants={background}
+                initial="initial"
+                animate={isActive ? 'open' : 'closed'}
+                className="absolute w-full h-full bg-black/50 top-full left-0 z-[99]"
+            />
+
+            <AnimatePresence mode="wait">
+                {isActive && <Navigation />}
+            </AnimatePresence>
         </header>
     )
 }

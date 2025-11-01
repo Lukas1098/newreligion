@@ -3,9 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import ClientLayout from "@/app/providers/client";
 import { SanityLive } from "@/sanity/lib/live";
-import { ThemeProvider } from "@/components/ui/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
-import Script from 'next/script'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,23 +16,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Santoz Fellas",
-  description: "Santoz Fellas",
+  title: "New Religion",
+  description: "New Religion",
   openGraph: {
-    title: "Santoz Fellas",
-    description: "Santoz Fellas",
-    url: "https://santozfellas.com",
-    siteName: "Santoz Fellas",
+    title: "New Religion",
+    description: "New Religion Studio",
+    url: "https://nwrl.vercel.app",
+    siteName: "New Religion",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Santoz Fellas",
+        alt: "New Religion",
         type: "image/png",
       },
     ],
-    locale: "es",
+    locale: "en",
     type: "website",
   },
 };
@@ -46,26 +44,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Script
-        id="newrelic-browser"
-        strategy="beforeInteractive"
-        src="/newrelic.js"
-      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-        //disableTransitionOnChange
-        >
           <ClientLayout>
             {children}
             <Analytics />
             <SanityLive />
           </ClientLayout>
-        </ThemeProvider>
       </body>
     </html>
   );

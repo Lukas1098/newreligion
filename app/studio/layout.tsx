@@ -1,6 +1,6 @@
 export const metadata = {
-    title: "Santoz Fellas",
-    description: "Santoz Fellas Studio",
+    title: "New Religion Studio",
+    description: "New Religion Studio",
 }
 
 export default function RootLayout({

@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://santozfellas.com', 
+    siteUrl: 'https://nwrl.vercel.app', 
     generateRobotsTxt: true, 
     sitemapSize: 5000,
   };

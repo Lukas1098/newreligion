@@ -1,8 +1,7 @@
-
 export function Manifest() {
     return (
         <section id="about">
-            <div className="w-full py-8">
+            <div className="w-full py-8 mt-10 mx-auto">
                 <div className="flex items-center justify-center px-4 py-12">
                     <div className='max-w-220'>
                         <p className="text-xs font-sans font-medium uppercase">

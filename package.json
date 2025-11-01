@@ -1,17 +1,18 @@
 {
-  "name": "santozfellas",
+  "name": "newreligion",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "set NODE_OPTIONS=-r newrelic && next dev --turbopack",
+    "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "set NODE_OPTIONS=-r newrelic && next start",
+    "start": "next start",
     "lint": "next lint",
     "typegen": "pnpm dlx sanity@latest schema extract && pnpm dlx sanity@latest typegen generate",
     "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
+    "@sanity/client": "^7.12.0",
     "@sanity/icons": "^3.7.0",
     "@sanity/image-url": "1",
     "@sanity/vision": "3",
@@ -19,9 +20,9 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.9.2",
+    "lenis": "^1.3.13",
     "lucide-react": "^0.503.0",
     "motion": "^12.9.2",
-    "newrelic": "^13.1.0",
     "next": "15.3.1",
     "next-sanity": "9",
     "next-sitemap": "^4.2.3",
@@ -35,7 +36,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@sanity/client": "^6.29.1",
     "@tailwindcss/postcss": "^4",
     "@types/newrelic": "^9.14.8",
     "@types/node": "^20",
