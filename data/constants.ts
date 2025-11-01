@@ -76,3 +76,5 @@ export const translate = {
         transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] as const, delay: i[1] }
     })
 }
+
+export const WEBSITE_URL="https://nwrl.vercel.app/"
