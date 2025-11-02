@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "New Religion",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.PNG",
         width: 1200,
         height: 630,
         alt: "New Religion",
