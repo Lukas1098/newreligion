@@ -42,22 +42,26 @@ html {
 }
 
 body {
+  @apply tracking-tight;
   overflow-x: hidden;
   max-width: 100vw;
-  background-color: black;
-  color: white;
-}
-
-p, h3{
-  font-family: 'ABC Diatype';
-}
-
-h1, h2{
-  font-family: 'Serif';
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer base {
+  body {
+    @apply tracking-tight;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }

@@ -14,7 +14,7 @@ export default function ProductThumb({ product }: { product: Product }) {
           <Image
             className="object-contain transition-transform duration-300 p-1
                         group-hover:scale-105"
-            src={imageUrl(mainImage).url() || "/placeholder.svg"}
+            src={imageUrl(mainImage).url()}
             alt={product.name || "Product Image"}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

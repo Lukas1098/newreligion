@@ -35,7 +35,7 @@ export default function Navlinks({ links, selectedLink, setSelectedLink }: Props
         ))
 
         return (
-            <div className="w-full lg:max-w-[1200px] lg:mt-[60px] flex flex-col">
+            <div className="w-full lg:max-w-[1200px] lg:mt-[60px] flex flex-col gap-2">
                 {links.map((link, index) => (
                     <Link key={index} href={link.href} className="w-full">
                         <motion.p

@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         hostname: "d26lpennugtm8s.cloudfront.net",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.cosmos.so",
+        pathname: "/**",
+      },
     ],
   },
 };

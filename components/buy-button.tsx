@@ -13,7 +13,7 @@ export default function BuyButton({ isOutOfStock = false }: BuyButtonProps) {
 
   return (
     <button
-      className="bg-white text-black py-4 w-full mt-8 hover:bg-gray-100 transition-colors uppercase font-medium text-sm"
+      className="bg-zinc-900 text-white py-4 w-full mt-8 hover:bg-zinc-800 transition-colors uppercase font-bold text-sm cursor-pointer"
       disabled={isOutOfStock}
       onClick={handleBuyClick}
     >

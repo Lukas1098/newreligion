@@ -2,7 +2,7 @@ import { imageUrl } from "@/lib/image-url";
 import { fetchProductBySlug } from "@/sanity/lib/products/fetchProductBySlug";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation'
 import BuyButton from "@/components/buy-button";
 import Link from "next/link";
 
@@ -29,9 +29,9 @@ export default async function ProductPage({
             <div className="md:w-1/2 pr-0 relative">
                 <Link href={"/"} className="flex items-center gap-2 mt-20">
                     <div>
-                        <h1 className="mx-auto text-sm font-light hover:underline">
+                        <p className="mx-auto text-sm hover:underline">
                             Go back
-                        </h1>
+                        </p>
                     </div>
                 </Link>
             </div>
@@ -61,11 +61,6 @@ export default async function ProductPage({
                                                 </div>
                                             )}
                                         </div>
-                                    ))}
-                                </div>
-                                <div className="flex justify-center mt-4 gap-1">
-                                    {productImages.map((_, index) => (
-                                        <div key={index} className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
                                     ))}
                                 </div>
                             </div>
@@ -139,7 +134,7 @@ export default async function ProductPage({
                     )}
                   
                     {Array.isArray(product.description) && (
-                        <div className="prose max-w-none mt-15 mb-6 mx-auto text-xs font-light">
+                        <div className="prose max-w-none mt-15 mb-6 mx-auto text-xs font-medium">
                             <PortableText value={product.description} />
                         </div>
                     )}
